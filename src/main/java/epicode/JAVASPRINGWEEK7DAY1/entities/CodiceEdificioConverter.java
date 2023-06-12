@@ -11,11 +11,23 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import jakarta.persistence.AttributeConverter;
 
 public class CodiceEdificioConverter implements AttributeConverter<String, String> {
 	private static String ALGORITMO = "AES/ECB/PKCS5Padding";
 	private static String SEGRETO = "mysup3rs3cr3tttt";
+
+	@Value("${spring.application.segreto}")
+	public void setSEGRETO(String segreto) {
+		SEGRETO = segreto;
+	}
+
+	@Value("${spring.application.algoritmo}")
+	public void setALGORITMO(String algoritmo) {
+		ALGORITMO = algoritmo;
+	}
 
 	@Override
 	public String convertToDatabaseColumn(String codice) {
