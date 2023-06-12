@@ -28,7 +28,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "users")
 @JsonIgnoreProperties({ "password", "active", "role", "authorities", "enabled", "credentialsNonExpired",
-		"accountNonExpired", "accountNonLocked" })
+    "accountNonExpired", "accountNonLocked" })
 public class User implements UserDetails {
 
 	@Id

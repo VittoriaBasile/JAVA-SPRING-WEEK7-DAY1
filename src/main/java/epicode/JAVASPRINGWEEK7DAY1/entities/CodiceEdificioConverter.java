@@ -14,8 +14,8 @@ import javax.crypto.spec.SecretKeySpec;
 import jakarta.persistence.AttributeConverter;
 
 public class CodiceEdificioConverter implements AttributeConverter<String, String> {
-	private final static String ALGORITMO = "AES/ECB/PKCS5Padding";
-	private final static String SEGRETO = "mysup3rs3cr3tttt";
+	private static String ALGORITMO = "AES/ECB/PKCS5Padding";
+	private static String SEGRETO = "mysup3rs3cr3tttt";
 
 	@Override
 	public String convertToDatabaseColumn(String codice) {
