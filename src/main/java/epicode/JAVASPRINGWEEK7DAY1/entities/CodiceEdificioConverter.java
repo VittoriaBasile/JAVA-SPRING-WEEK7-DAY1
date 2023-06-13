@@ -16,8 +16,8 @@ import org.springframework.beans.factory.annotation.Value;
 import jakarta.persistence.AttributeConverter;
 
 public class CodiceEdificioConverter implements AttributeConverter<String, String> {
-	private static String ALGORITMO = "AES/ECB/PKCS5Padding";
-	private static String SEGRETO = "mysup3rs3cr3tttt";
+	private static String ALGORITMO;
+	private static String SEGRETO;
 
 	@Value("${spring.application.segreto}")
 	public void setSEGRETO(String segreto) {
